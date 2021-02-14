@@ -10,54 +10,340 @@
 <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <header>
-            <div class="container">
-            <nav class="flex items-center justify-between">
-                <div class="left flex items-center">
-                <div class="branding">
-                  <img src="images/logo.jpg" alt="">
-                </div>
-                <div>
-                    <a href="#">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">pages</a>
-                </div>
-                <div class="right">
-                <button class="btn btn-primary">Contact</button>
-                </div>
-            </nav>
-            <div class ="hero flex items-center justify-between" >
-                <div class="left flex-1 flex justify-center">
-                    <img src="images/WhatsApp Image 2020-09-15 at 5.06.45 PM (1).jpeg">
-                </div>
-                <div class="right flex-1">
-                          <h6>VIGNESH</h6>
-                         <h1>I'm a web <span>Designer</span></h1>
-                    <p>Hello,i am a freelancer and computerscience student.<br>I will create website for personal site and software developer too!</p>
-             <div>
-                <button class="btn btn-secondary">DOWNLOAD CV</button>
-             </div>
-                </div>
-
-            </div>
-            </div>
-        </header>
-        <section class="About">
-            <div class="container flex items-center">
-                <div class="flex-1">
-                    <img class="About-me-img" src="images/diygyufgey.jpg">
-                </div>
-                <div class="flex-1">
-                    <h1>ABout<span>me</span></h1>
-                    <h3>Hello,Iam vignesh.H.E</h3>
-                    <p>uygeyjdggashvhadvgnnvcjffasuyfdyuafudhvshuyfdyfeVJHFYFUYFUYFVFFYFJHVJHVJHVJHVHJVMVXVHVJHVJVJHVJ</p>
-                    <div class="social">
-                        <a href="#"><img src="images/instagram.svg" alt=""></a>
-                        <a href="#"><img src="images/facebook.svg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </section> 
+         <h1>array</h1>
+        <p>#include< stdio.h ><br>
+            int a[20], n,i,pos,ele, max;<br>
+            void create()<br>
+            {<br>
+             printf("\nEnter the number of elements\n");<br>
+             scanf("%d",&n);<br>
+             printf("\nEnter the elements one by one\n");<br>
+             for(i=0;i< n;i++)<br>
+             scanf("%d",&a[i]);<br>
+            
+            }<br>
+            void display()<br>
+            {<br>
+             printf("\n The array elements are:\n");<br>
+             for(i=0;i< n;i++)<br>
+             printf("\na[%d]=%d",i,a[i]);<br>
+            }<br>
+            void insert()<br>
+            {<br>
+                if(n < max){<br>
+                    printf("\nEnter the position where you wish to insert new element\n");<br>
+             scanf("%d",&pos);<br>
+             if(pos>=n+1)<br>
+             printf("Invalid position\n");<br>
+             else<br>
+             {<br>
+             printf("\n Enter the element to be inserted:\t");<br>
+             scanf("%d",&ele);<br>
+             for(i=n-1;i>=pos;i--)<br>
+             a[i+1]=a[i];<br>
+             a[pos]=ele;<br>
+             n++;<br>
+             }<br>
+                } else {<br>
+                printf("array is full");<br>
+                }<br>
+            }<br>
+            void delete()<br>
+            {<br>
+             printf("\nEnter the position from where you wish to delete element\n");<br>
+             scanf("%d",&pos);<br>
+             if(pos>=n+1)<br>
+             printf("Invalid position\n");<br>
+             else<br>
+             {<br>
+             printf("\n Deleted Element is : %d",a[pos]);<br>
+             for(i=pos;i< n-1;i++)<br>
+             a[i]=a[i+1];<br>
+             n--;<br>
+             }<br>
+            }<br>
+            void main()<br>
+            {<br>
+            int choice;<br>
+            while(1)<br>
+            {<br>
+             printf("\n ARRAY OPERATIONS");<br>
+             printf("\n Enter your choice");<br>
+             printf("\n 1.CREATE\n 2.DISPLAY\n 3.INSERT \n 4.DELETE\n 5.EXIT\n");<br>
+             scanf("%d",&choice);<br>
+             switch(choice)<br>
+             {<br>
+             case 1:create();<br>
+             break;<br>
+             case 2:display();<br>
+             break;<br>
+             case 3:insert();<br>
+             break;<br>
+             case 4:delete();<br>
+             break;<br>
+             case 5:return;<br>
+             default:printf("\n Invalid choice\n");<br>
+             }<br>
+            }<br>
+            } </p>
+            <br>
+            <br>
+            <br>
+            <h1>2 program</h1>
+            <p>#include <stdio.h><br>
+                #include <string.h><br>
+                int stringmatchreplace(char[], char[], char[]);<br>
+                
+                void main()<br>
+                {<br>
+                 char str[100],pat[50],rep[50];<br>
+                 printf("Enter the main string\n");<br>
+                 gets(str);<br>
+                 printf("\nEnter a pattern string\n");<br>
+                 gets(pat);<br>
+                 printf("\nEnter a replacement string\n");<br>
+                 gets(rep);<br>
+                 if (stringmatchreplace(str, pat, rep))<br>
+                 printf("\n The Resultant string is %s\n",str);<br>
+                 else<br>
+                 printf("\n Pattern %s is NOT found in %s\n", pat, str);<br>
+                }<br>
+                int stringmatchreplace(char str[100],char pattern[50], char
+                replace[50])<br>
+                {<br>
+                 int i,j,c,m,n,found=0;<br>
+                 n=strlen(str);<br>
+                 m=strlen(pattern);<br>
+                 i=0;<br>
+                 while(i<=(n-m))<br>
+                 {<br>
+                 c=i;<br>
+                 j=0;<br>
+                 while(str[c]==pattern[j])<br>
+                 {<br>
+                 c++;<br>
+                j++;<br>
+                 if(pattern[j]=='\0')<br>
+                 {<br>
+                 found=1;<br>
+                j=0;<br>
+                while(j < m)<br>
+                 str[i+j] = replace[j++];<br>
+                 i=i+m;<br>
+                 j=0;<br>
+                 }<br>
+                 }<br>
+                 i++;<br>
+                 }<br>
+                 if(found==1)<br>
+                 return 1;<br>
+                 return 0;<br>
+                }</p>
+                <br>
+                <br>
+                <br>
+                <h1>3 program</h1>
+                <p>#include< stdio.h><br>
+                    #include< stdio.h><br>
+                    #define max 5<br>
+                    
+                    int isEmpty();<br>
+                    int isFull();<br>
+                    int POP();<br>
+                    void push(int item);<br>
+                    void display();<br>
+                    void palindrome();<br>
+                    
+                    int stack[max],top=-1,i;<br>
+                    int isEmpty()<br>
+                    {<br>
+                        if(top==-1){<br>
+                            
+                            printf("\n stack is underflow!");<br>
+                            return-1;<br>
+                        }<br>
+                        else<br>
+                        return 0;<br>
+                    }<br>
+                    int isFull()<br>
+                    {<br>
+                        if(top==(max-1)){<br>
+                            printf("\n stack is overflow!");<br>
+                            return -1;<br>
+                        }<br>
+                        else<br>
+                        return 0;<br>
+                    }<br>
+                    int POP()<br>
+                    {<br>
+                        int ret;<br>
+                        if(isEmpty()==0){<br>
+                            ret=stack[top--];<br>
+                            printf("\npopped element is:%d",ret);<br>
+                        }<br>
+                        return ret;<br>
+                    }<br>
+                    void push(int item){<br>
+                        if(isFull()==0)<br>
+                        stack[++top]=item;<br>
+                    }<br>
+                    void display(){<br>
+                        if(isEmpty()==0){<br>
+                            printf("\n THE stack contents are:");<br>
+                            for(i=0;i <=top;i++)<br>
+                            printf("\t%d",stack[i]);<br>
+                        }<br>
+                    }<br>
+                    void Palindrome() {<br>
+                        int i=0,j = top, temp = top+1, count=0;<br>
+                        while(i< temp/2 )<br>
+                    {<br>
+                        if(stack[i++] == stack[j--])<br>
+                    {<br>
+                        count++;<br>
+                        
+                        }else<br>
+                        break;<br>
+                    }<br>
+                        if(temp/2==count)<br>
+                        printf("\nStack is a Palindrome numbers ");<br>
+                        else<br>
+                        printf("\nStack is not a palindrome!!");<br>
+                    }<br>
+                    
+                    int main() {<br>
+                    
+                    int ch,item;<br>
+                    
+                    do{<br>
+                    
+                    printf("\n MAIN MENU:");<br>
+                    
+                    printf("1.push\n 2.POP \n3.PALINDROME check \n 4.DISPLAY status 5. Exit");<br>
+                    
+                    printf("\nEnter Your Choice: ");<br>
+                    
+                    scanf("%d", &ch);<br>
+                    
+                    switch(ch){<br>
+                    
+                    case 1:<br>
+                    printf("\nEnter an element to be pushed:");<br>
+                    
+                    scanf("%d", &item);<br>
+                    
+                    push(item);<br>
+                    break;<br>
+                    
+                    case 2:<br>
+                    POP();<br>
+                    break;<br>
+                    
+                    case 3:<br>
+                    Palindrome();<br>
+                    break;<br>
+                    
+                    case 4:<br>
+                    display();<br>
+                    break;
+                    <br>
+                    case 5:<br>
+                    return 0;<br>
+                    
+                    }<br>
+                    
+                    }while (1);<br>
+                    }</p>
+                    <h1>4th program</h1>
+                    <p>#include< stdio.h><br>
+                        void infix_to_postfix();<br>
+                        void push(char);<br>
+                        char pop();<br>
+                        int priority(char);<br>
+                        char infix[30], postfix[30],stack[30];<br>
+                        int top=-1;<br>
+                        int main()<br>
+                        {<br>
+                        printf("Enter the valid Infix expression \n");<br>
+                        scanf("%s",infix);<br>
+                        infix_to_postfix();<br>
+                        printf("\n Infix expression : %s",infix);<br>
+                        printf("\n Postfix expression : %s\n",postfix);<br>
+                        return 0;<br>
+                        }<br>
+                        void push(char item)<br>
+                        {<br>
+                        stack[++top]=item;<br>
+                        }<br>
+                        char pop()<br>
+                        {<br>
+                        return stack[top--];<br>
+                        }<br>
+                        int priority(char symb)<br>
+                        {<br>
+                        int p;<br>
+                        switch(symb)<br>
+                        {<br>
+                        case '+':<br>
+                        case '-': p=1;<br>
+                         break;<br>
+                         case '*':<br>
+                        case '/':<br>
+                        case '%': p=2;<br>
+                         break;<br>
+                        case '^':<br>
+                        case '$': p=3;<br>
+                         break;<br>
+                        case '(':<br>
+                        case ')': p=0;<br>
+                         break;<br>
+                        case '#':p=-1;<br>
+                         break;<br>
+                        }<br>
+                        return p;<br>
+                        }<br>
+                        void infix_to_postfix()<br>
+                        {<br>
+                        int i=0,j=0;<br>
+                        char symb,temp;<br>
+                        push('#');<br>
+                        for(i=0;infix[i]!='\0';i++)<br>
+                        {<br>
+                        symb=infix[i];<br>
+                        switch(symb)<br>
+                        {<br>
+                        case '(': push(symb);<br>
+                         break;<br>
+                        case ')': temp=pop(); <br>
+                         while(temp!='(') <br>
+                         {<br>
+                         postfix[j++]=temp;<br>
+                        temp=pop();<br>
+                         } <br>
+                        break;<br>
+                        case'+':<br>
+                        case'-':<br>
+                        case'*':<br>
+                        case'/':<br>
+                        case'%':<br>
+                        case'^':<br>
+                         case'$': while(priority(stack[top])>=priority(symb)) <br>
+                         {<br>
+                         temp=pop();<br>
+                        postfix[j++]=temp;<br>
+                        }<br>
+                        push(symb);<br>
+                        break;<br>
+                        default: postfix[j++]=symb;<br>
+                         } <br>
+                        } <br>
+                        while(top>0) <br>
+                        {<br>
+                        temp=pop();<br>
+                        postfix[j++]=temp;<br>
+                         } <br>
+                        postfix[j]='\0'; <br>
+                        } </p>
 
     </body>
 
