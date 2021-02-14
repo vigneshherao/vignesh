@@ -344,6 +344,45 @@
                          } <br>
                         postfix[j]='\0'; <br>
                         } </p>
+                        <br>
+                        <br>
+                        <br>
+                        <h1>5 program</h1>
+                        <p>#include< math.h><br>
+                            #include< string.h><br>
+                            double Compute(char symbol, int op1, int op2)<br>
+                            {<br>
+                            switch(symbol)<br>
+                            {<br>
+                            case '+' : return op1 + op2;<br>
+                            case '-' : return op1 - op2;<br>
+                            case '*' : return op1 * op2;<br>
+                            case '/' : return op1 / op2;<br>
+                            case '%' : return (op1% op2);<br>
+                            case '^' : return (int)pow(op1,op2);<br>
+                            default : return 0;<br>
+                            }<br>
+                            }<br>
+                            int main()<br>             
+                            {<br>
+                            int s[20], op1, op2;<br>
+                            int top=-1, i;<br>
+                            char postfix[20], symbol;<br>
+                            printf("\nEnter the postfix expression:");<br>
+                            scanf("%s",postfix);<br>
+                            for(i=0; i < strlen(postfix); i++)<br>
+                            {<br>
+                            symbol = postfix[i];<br>
+                            if(isdigit(symbol))<br>
+                            s[++top] = symbol -'0';<br>
+                            else {<br>
+                            op2 = s[top--];<br>
+                            op1 = s[top];<br>
+                            s[top]= Compute(symbol, op1, op2);<br>
+                            }<br>
+                            }<br>
+                            printf("\nThe result is : %d\n", s[top]);<br>
+                            }</p>
 
     </body>
 
