@@ -383,6 +383,82 @@
                             }<br>
                             printf("\nThe result is : %d\n", s[top]);<br>
                             }</p>
+                             <br>
+                            <br>
+                            <br>
+                            <h1>6th program</h1>
+                            <p>#include< stdio.h>
+                                #include< stdlib.h><br>
+                                char q[10];<br>
+                                int front=-1,rear=-1;<br>
+                                int max=4;<br>
+                                int isFull(){<br>
+                                if((front+1)%max==(rear+1)% max && rear>-1) {<br>
+                                return 1;<br>
+                                }<br>
+                                else<br>
+                                return 0;<br>
+                                }<br>
+                                int isEmpty(){<br>
+                                if((front==-1)&&(rear==-1)) {<br>
+                                return 1;<br>
+                                }<br>
+                                else{<br>
+                                return 0; <br>
+                                }<br>
+                                }<br>
+                                void Insert(){<br>
+                                if(isFull()==0) { <br>
+                                printf("Enter element to insert:");<br>
+                                rear=(++rear)%max;<br>
+                                scanf(" %c",&q[rear]);<br>
+                                }<br>
+                                else<br>
+                                printf("Queue is overflow\n");<br>
+                                }<br>
+                                void Delete(){<br>
+                                if(isEmpty()==0){ <br>
+                                front=(++front)%max;<br>
+                                printf("Deleted element is:%c\n", q[front]);<br>
+                                if(front==rear)<br>
+                                front=rear=-1;<br>
+                                } else {<br>
+                                printf("Queue is empty\n");<br>
+                                }<br>
+                                }<br>
+                                
+                                
+                                
+                                void Display(){<br>
+                                int i=(front+1) %max;<br>
+                                if(isEmpty()==0){ <br>
+                                do{<br>
+                                printf("\t%c",q[i]);<br>
+                                i=(i+1)%max;<br>
+                                } while(i!=(rear+1)%max);<br>
+                                }<br>
+                                else {<br>
+                                printf("Queue is empty\n");<br>
+                                }<br>
+                                }<br>
+                                
+                                
+                                
+                                int main(){<br>
+                                int ch;<br>
+                                do {<br>
+                                printf("\n Circular Queue operations\n 1.Insert\n 2.Delete\n 3.Display\n 4.Exit\n");<br>
+                                printf("Enter your choice:");<br>
+                                scanf("%d",&ch);<br>
+                                switch(ch) {<br>
+                                case 1: Insert(); break;<br>
+                                case 2: Delete(); break;<br>
+                                case 3: Display(); break;<br>
+                                case 4: exit(0);<br>
+                                }<br>
+                                }while(1);<br>
+                                
+                                }</p>
 
     </body>
 
